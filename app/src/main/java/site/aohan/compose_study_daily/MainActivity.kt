@@ -26,6 +26,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import site.aohan.compose_study_daily.component.WebViewContainer
 import site.aohan.compose_study_daily.innerapps.gmailclone.GmailCloneApp
+import site.aohan.compose_study_daily.innerapps.newsapp.NewsApp
 import site.aohan.compose_study_daily.model.NavigationItem
 import site.aohan.compose_study_daily.ui.screens.ProfileScreen
 import site.aohan.compose_study_daily.ui.screens.StateAndRecompositionScreen
@@ -60,6 +61,7 @@ class MainActivity : ComponentActivity() {
                             StateAndRecompositionScreen(navController)
                         },
                         NavigationItem(NavEnum.GMAIL) { GmailCloneApp() },
+                        NavigationItem(NavEnum.NEWS_APP) { NewsApp() },
                     )
 
 

@@ -5,6 +5,7 @@ object NavEnum {
     const val PROFILE_SCREEN = "ProfileScreen"
     const val STATE_AND_RECOMPOSITION = "StateAndRecomposition"
     const val GMAIL = "Gmail"
+    const val NEWS_APP = "NewsApp"
 
     @Suppress("ClassName")
     object WEB_VIEW {
