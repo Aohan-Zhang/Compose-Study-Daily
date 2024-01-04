@@ -27,8 +27,8 @@ import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import coil.size.Scale
-import site.aohan.compose_study_daily.NavEnum
 import site.aohan.compose_study_daily.innerapps.newsapp.model.NewsModel
+import site.aohan.compose_study_daily.model.NavigationEnum
 
 @Composable
 fun NewsList(
@@ -50,7 +50,7 @@ fun NewsList(
         items(news) {
             NewsItem(
                 modifier = Modifier.clickable {
-                    navController.navigate(NavEnum.WEB_VIEW.of(it.originUrl))
+                    navController.navigate(NavigationEnum.WebView.of(it.originUrl))
                 },
                 title = it.title,
                 picUrls = it.pictures

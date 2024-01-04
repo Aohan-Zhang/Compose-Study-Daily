@@ -18,11 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun StateAndRecompositionScreen(navHostController: NavHostController) {
+fun StateAndRecompositionScreen() {
     var name by rememberSaveable { mutableStateOf("admin") }
     var inputName by rememberSaveable { mutableStateOf("") }
     Column(
@@ -48,5 +46,5 @@ fun StateAndRecompositionScreen(navHostController: NavHostController) {
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun PreviewStateAndRecomposition() {
-    StateAndRecompositionScreen(navHostController = rememberNavController())
+    StateAndRecompositionScreen()
 }

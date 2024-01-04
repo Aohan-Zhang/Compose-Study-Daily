@@ -34,8 +34,8 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import site.aohan.compose_study_daily.NavEnum
 import site.aohan.compose_study_daily.R
+import site.aohan.compose_study_daily.model.NavigationEnum
 
 @Composable
 fun ProfileScreen(navHostController: NavHostController) {
@@ -99,6 +99,9 @@ fun ProfileScreen(navHostController: NavHostController) {
     }
 }
 
+/**
+ * 水平布局
+ */
 private fun getHorizontalConstraint() = ConstraintSet {
     val horizontalCenterGuideLine = createGuidelineFromTop(0.5F)
     val verticalCenterGuideLine = createGuidelineFromStart(0.5F)
@@ -140,6 +143,9 @@ private fun getHorizontalConstraint() = ConstraintSet {
 }
 
 
+/**
+ * 竖向布局
+ */
 private fun getVerticalConstraint() = ConstraintSet {
     val avatar = createRefFor("avatar")
     constrain(avatar) {
@@ -190,7 +196,7 @@ private fun LinkButton(
     OutlinedButton(
         modifier = modifier.width(300.dp),
         onClick = {
-            navHostController.navigate(NavEnum.WEB_VIEW.of(url))
+            navHostController.navigate(NavigationEnum.WebView.of(url))
         }) {
         Row(Modifier.align(Alignment.CenterVertically)) {
             Icon(
