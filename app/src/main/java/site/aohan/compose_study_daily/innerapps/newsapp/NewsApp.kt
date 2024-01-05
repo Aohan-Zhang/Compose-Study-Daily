@@ -1,25 +1,26 @@
 package site.aohan.compose_study_daily.innerapps.newsapp
 
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import site.aohan.compose_study_daily.component.WebViewContainer
+import site.aohan.compose_study_daily.innerapps.newsapp.component.BottomMenuBar
+import site.aohan.compose_study_daily.innerapps.newsapp.component.newsAppBottomBar
 import site.aohan.compose_study_daily.innerapps.newsapp.config.Route
-import site.aohan.compose_study_daily.innerapps.newsapp.screens.HomeScreen
+import site.aohan.compose_study_daily.innerapps.newsapp.model.BottomBarItemModel
 import site.aohan.compose_study_daily.model.NavigationEnum
 
 @Composable
 fun NewsApp() {
-    Scaffold { padding ->
-        val navController = rememberNavController()
-        NavHost(navController = navController, startDestination = Route.NewsAppHome) {
-            composable(Route.NewsAppHome) {
-                HomeScreen(modifier = Modifier.padding(padding), navController = navController)
-            }
+    val navController = rememberNavController()
+    Scaffold(
+        bottomBar = { BottomMenuBar(navController) }
+    ) { padding ->
+        NavHost(navController = navController, startDestination = BottomBarItemModel.Home.route) {
+
+            newsAppBottomBar(padding, navController)
 
             composable(Route.NewsAppDetail) {
 

@@ -32,7 +32,7 @@ fun HomeScreen(modifier: Modifier = Modifier, navController: NavHostController) 
         if (newsState.isNotEmpty()) return@LaunchedEffect
         launch {
             showLoading = true
-            val model = NewsRepository.fakeGetNewsFromJuhe()
+            val model = NewsRepository.getNewsFromJuhe()
             newsState = model
             showLoading = false
         }

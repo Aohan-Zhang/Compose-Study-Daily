@@ -8,6 +8,7 @@ import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -106,7 +107,10 @@ fun NavigationItemList(navController: NavHostController) {
     ) {
         val context = LocalContext.current
 
-        FlowRow {
+        FlowRow(
+            modifier = Modifier.padding(horizontal = 10.dp),
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
             listOf(ProfileScreen, StateAndRecomposition, Gmail, NewsApp).forEach {
                 OutlinedTextButton(text = it.displayName) {
                     navController.navigate(it.route)
